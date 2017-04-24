@@ -18,6 +18,7 @@ function domManip(mData, tData, choice) {
     // console.log('id', id);
     // console.log('timeArr', timeArr)
     if (timeArr) {
+      timeArr = timeArr.join(' ')
       html += "<ul id='realBox'><div class='movieItem'><h3><p><img src='" + mData[i].poster + "'><span class='miniBox'>";
       html += mData[i].title + " <span class='small'>(" + mData[i].rating + ")</span>";
       html += "<span class=tiny>" + timeArr + "</span>"

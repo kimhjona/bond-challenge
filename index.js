@@ -1,31 +1,31 @@
-
-
 function domManip(mData, tData, choice) {
   if (choice === 'arclight') tData = tData[0];
   else if (choice === 'pacific') tData = tData[1];
   else tData = tData[2];
   const id = mData.map((elem) => elem.id);
   const newLength = Object.keys(tData.showtimes);
-  console.log(newLength)
-  console.log('tdata',tData.showtimes)
-  console.log('mdata', mData)
-  console.log('id', id)
+  // console.log(newLength)
+  // console.log('tdata',tData.showtimes)
+  // console.log('mdata', mData)
+  // console.log('id', id)
   let html = '';
 
   for (let i = 0; i < mData.length; i++) {
     const id = mData.map((elem) => elem.id);
     let timeArr = tData.showtimes[id[i]]
-    console.log(timeArr)
-    timeArr = (timeArr) ? timeArr.join(' ') : "Not at the " + choice + "!"
-    console.log('id', id);
-    console.log('timeArr', timeArr)
-    html += "<ul id='realBox'><div class='movieItem'><h3><p><img src='" + mData[i].poster + "'><span class='miniBox'>";
-    html += mData[i].title + " <span class='small'>(" + mData[i].rating + ")</span>";
-    html += "<span class=tiny>" + timeArr + "</span>"
-    html += "</span></h3></p></div></ul>"
+    // console.log(timeArr)
+    // timeArr = (timeArr) ? timeArr.join(' ') : "Not at the " + choice + "!"
+    // console.log('id', id);
+    // console.log('timeArr', timeArr)
+    if (timeArr) {
+      html += "<ul id='realBox'><div class='movieItem'><h3><p><img src='" + mData[i].poster + "'><span class='miniBox'>";
+      html += mData[i].title + " <span class='small'>(" + mData[i].rating + ")</span>";
+      html += "<span class=tiny>" + timeArr + "</span>"
+      html += "</span></h3></p></div></ul>"
     }
-    return html;
   }
+  return html;
+}
 
 let theatre = 'arclight';
 let movieData;
@@ -58,7 +58,7 @@ $("input").keyup(() => {
 
 function selectTheatre(theatreInput) {
   theatre = theatreInput;
-
-  const html = domManip(movieData,theatreData, theatre);
+  
+  const html = domManip(movieData, theatreData, theatre);
   $('#movieBox').html(html);
 }

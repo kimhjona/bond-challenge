@@ -14,8 +14,8 @@ voilà!
 <li>&#x2713; HTML mockups</li>
 <li>&#x2713; More data flow stuff</li>
 <li>&#x2713; Get list working, starting with name and then pic</li>
-<li>Showtimes</li>
-<li>Theatres</li>
+<li>&#x2713; Showtimes</li>
+<li>&#x2713; Theatres</li>
 <li>Any CSS/bugs stuff</li>
 <li>Filters</li>
 <li>Fade movies that have passed</li>

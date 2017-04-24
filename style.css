@@ -1,0 +1,65 @@
+body {
+  background: lightgrey;
+}
+
+body,
+input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden
+}
+
+#textBox {
+  margin-top: 50px;
+  width: 500px;
+  height: 40px;
+  text-decoration: none;
+}
+
+#textBox:focus {
+  outline: none !important;
+}
+
+#movieBox {
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  margin-top: 20px;
+  width: 500px;
+}
+
+@media only screen and (max-width: 600px) {
+  #textBox,
+  #movieBox {
+    width: 100%;
+  }
+}
+
+
+/* List of movies */
+
+.movieItem {
+  float: left;
+}
+
+.miniBox {
+  float: right;
+  padding: 20px 10px
+}
+
+.small {
+  color: grey;
+  font-size: 15px;
+}
+
+.tiny {
+  font-size: 10px;
+  margin: 0;
+}
+
+img {
+  width: 70px;
+  height: auto;
+}

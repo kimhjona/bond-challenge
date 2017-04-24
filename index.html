@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="style.css">
+
+  <body style='text-align: center;'><input type='text' id='textBox' autofocus placeholder=' Search movies...'>
+    <div id='movieBox'>
+    </div>
+  </body>
+</html>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script>
+  function domManip(mData, tData) {
+    let html = '';
+    for (let i = 0; i < mData.length; i++) {
+      html += "<ul><div class='movieItem'><h3><p><img src='" + mData[i].poster + "'><span class='miniBox'>";
+      html += mData[i].title + " <span class='small'>(" + mData[i].rating + ")</span>";
+      html += "</span></h3></p></div></ul>"
+    }
+    return html;
+  }
+
+  let movieData;
+  let theatreData;
+  $(document).ready(() => {
+    $.getJSON('data/movieData.json').success(mData => {
+      $.getJSON('data/theatreData.json').success(tData => {
+        theatreData = tData;
+        movieData = mData;
+        const html = domManip(movieData);
+        $('#movieBox').html(html);
+      });
+    });
+  });
+
+  function findMatches(matchingWord, movieData) {
+    movieData = movieData.filter(elem => {
+      const title = elem.title.toLowerCase();
+      return title.includes(matchingWord.toLowerCase())
+    })
+    return movieData;
+  }
+
+  $("input").keyup(() => {
+    const text = $("#textBox").val();
+    const matches = findMatches(text, movieData);
+    const html = domManip(matches);
+    $('#movieBox').html(html);
+  });
+  </script>

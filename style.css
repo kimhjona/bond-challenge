@@ -2,6 +2,15 @@ body {
   background: lightgrey;
 }
 
+a {
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: orange;
+}
+
 body,
 input {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -20,14 +29,34 @@ input {
 
 #textBox:focus {
   outline: none !important;
+  border: 3px solid orange;
 }
 
 #movieBox {
   margin-left: auto;
   margin-right: auto;
   background: white;
-  margin-top: 20px;
+  /*margin-top: 20px;*/
   width: 500px;
+  /*border: 1px solid black;*/
+}
+
+#container {
+  box-sizing: border-box;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left {
+  float: left;
+  width: 33.3%;
+  /*border: 3px solid #333;*/
+}
+
+#realBox {
+  /*border: 1px solid black;*/
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 600px) {
@@ -46,7 +75,13 @@ input {
 
 .miniBox {
   float: right;
+  text-align: left;
   padding: 20px 10px
+}
+
+.highlighted {
+  text-decoration: underline;
+  color: orange;
 }
 
 .small {
@@ -55,6 +90,7 @@ input {
 }
 
 .tiny {
+  display: flex;
   font-size: 10px;
   margin: 0;
 }

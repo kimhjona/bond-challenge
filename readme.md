@@ -4,6 +4,7 @@
 # Welcome! How to test this out:
 
 <li><code>git clone https://github.com/kimhjona/bond-challenge.git</code></li>
+<li><code>cd bond-challenge</code></li>
 <li><code>npm install</code></li>
 <li><code>npm start</code></li>
 <li>Open localhost:8080 on your browser</li>
